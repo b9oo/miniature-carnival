@@ -1,4 +1,4 @@
-//% color=#FF00FF weight=100 icon="\uf1e2"
+//% color=#FF00FF weight=100 icon="\uf1e2" blockGap=8
 namespace geometrydash {
 
     let playerSprite: Sprite = null;
@@ -6,8 +6,11 @@ namespace geometrydash {
     let yVelocity = 0;
     let gravityDirection = 1;
 
+    /**
+     * Create the Geometry Dash player
+     */
     //% block="create gd player at x %x y %y"
-    //% x.defl=30 y.defl=60
+    //% x.defl=30 y.defl=60 blockGap=8
     export function createGDPlayer(x: number, y: number) {
         playerSprite = sprites.create(img`
             22222222
@@ -22,6 +25,9 @@ namespace geometrydash {
         playerSprite.setPosition(x, y);
     }
 
+    /**
+     * Get the player sprite
+     */
     //% block="gd player"
     export function gdPlayer(): Sprite {
         return playerSprite;
@@ -51,8 +57,9 @@ namespace geometrydash {
 
         yVelocity += 0.8 * gravityDirection;
         playerSprite.y += yVelocity;
-        playerSprite.x += 2; // auto run
+        playerSprite.x += 2; // auto-run
 
+        // Keep player in bounds
         if (playerSprite.y > 110) {
             playerSprite.y = 110;
             yVelocity = 0;
