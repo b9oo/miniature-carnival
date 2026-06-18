@@ -1,0 +1,17 @@
+{
+    "name": "geometrydash",
+    "version": "1.0.0",
+    "description": "Geometry Dash tiles, gamemodes (cube/ship/etc.), gravity, portals, and more for Arcade games!",
+    "license": "MIT",
+    "dependencies": {
+        "core": "*"
+    },
+    "files": [
+        "main.ts"
+    ],
+    "icon": "./icon.png",
+    "targetVersions": {
+        "target": "arcade",
+        "targetVersion": "1.0.0"
+    }
+}
